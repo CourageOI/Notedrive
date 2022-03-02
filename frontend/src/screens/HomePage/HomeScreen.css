@@ -1,0 +1,55 @@
+:root {
+  font-size: 16px;
+}
+
+.home-page {
+  min-height: 93vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../../images/notedrive.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.intro {
+  text-align: center;
+  width: 100%;
+}
+.intro-title {
+  font-weight: 500;
+  font-size: 6rem;
+  color: #fff;
+}
+.intro-subtitle {
+  text-align: center;
+  padding-top: 1.3rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+.buttonContainer {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.homeButton {
+  width: 11rem;
+  height: 3.5rem;
+}
+@media only screen and (min-width: 1200px) {
+  .buttonContainer {
+    padding: 0 12.5rem;
+  }
+  .intro-title {
+    padding: 0 6.2rem;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .intro-title {
+    font-size: 4rem;
+  }
+  .homeButton {
+    width: 100px;
+    height: 50px;
+  }
+}
