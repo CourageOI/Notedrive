@@ -8,6 +8,9 @@ const {
   UPDATE_NOTE_REQUEST,
   UPDATE_NOTE_SUCCESS,
   UPDATE_NOTE_FAIL,
+  FETCH_NOTE_REQUEST,
+  FETCH_NOTE_SUCCESS,
+  FETCH_NOTE_FAIL,
 } = require("../constants/noteConstants");
 
 export const AllNotesReducer = (state = { notes: [] }, action) => {
@@ -19,6 +22,22 @@ export const AllNotesReducer = (state = { notes: [] }, action) => {
       return { loading: false, notes: action.payload };
 
     case ALL_NOTES_FAIL:
+      return { loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+export const FetchNoteReducer = (state = { notes: [] }, action) => {
+  switch (action.type) {
+    case FETCH_NOTE_REQUEST:
+      return { loading: true };
+
+    case FETCH_NOTE_SUCCESS:
+      return { loading: false, notes: action.payload };
+
+    case FETCH_NOTE_FAIL:
       return { loading: false, error: action.payload };
 
     default:

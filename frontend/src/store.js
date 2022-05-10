@@ -5,6 +5,7 @@ import { userLoginReducer, userRegReducers } from "./reducers/userReducers";
 import {
   AllNotesReducer,
   CreateNoteReducer,
+  FetchNoteReducer,
   UpdateNoteReducer,
 } from "./reducers/noteReducers";
 
@@ -12,6 +13,7 @@ const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegReducers,
   noteList: AllNotesReducer,
+  userNote: FetchNoteReducer,
   createNote: CreateNoteReducer,
   updateNote: UpdateNoteReducer,
 });

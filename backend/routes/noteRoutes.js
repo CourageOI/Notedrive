@@ -11,10 +11,9 @@ const router = express.Router();
 
 router.route("/").get(protect, getAllNotes);
 router.route("/create").post(protect, createNotes);
-router
-  .route("/:id")
-  .get(getNoteById)
-  .put(protect, updateNote)
-  .delete(protect, deleteNote);
+router.route("/:id");
+router.route("/:id").get(getNoteById);
+router.route("/:id").put(protect, updateNote);
+router.route("/:id").delete(protect, deleteNote);
 
 module.exports = router;

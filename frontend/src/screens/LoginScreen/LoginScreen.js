@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MainScreen from "../../components/MainScreen/MainScreen";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../../components/Loading";
 import ErrorMessage from "../../components/ErrorMessage";
 import { login } from "../../actions/userActions";
 
-const LoginScreen = ({ history }) => {
+const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (userInfo) {
-      history.push("/mynotes");
+      navigate("/mynotes");
     }
-  }, [history, userInfo]);
+  }, [navigate, userInfo]);
 
   const submitHandler = async (e) => {
     e.preventDefault();

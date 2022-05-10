@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { resgister } from "../../actions/userActions";
 import ErrorMessage from "../../components/ErrorMessage";
 import Loading from "../../components/Loading";
@@ -19,13 +19,13 @@ const RegScreen = () => {
   const dispatch = useDispatch();
   const userRegister = useSelector((state) => state.userRegister);
   const { loading, error, userInfo } = userRegister;
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (userInfo) {
-      history.push("/mynotes");
+      navigate("/mynotes");
     }
-  }, [history, userInfo]);
+  }, [navigate, userInfo]);
 
   const submitHandler = async (e) => {
     e.preventDefault();
