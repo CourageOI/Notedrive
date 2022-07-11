@@ -7,7 +7,7 @@ const connectToDB = async () => {
       useNewUrlParser: true,
     });
     console.log(
-      `DB is connected: ${connector.connection.host}/${connector.connection.name}`
+      `DB is connected!}`
     );
   } catch (error) {
     console.error(`Error: ${error.message}`);
